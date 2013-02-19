@@ -18,7 +18,7 @@ The code of interest is as follows within ConstantsBrowser.  Replacing commit wi
     args.putString(DetailsFragment.KEY_DETAILS, "Total items: " + cursor.getCount());
     fragment.setArguments(args);
     
-    // Uncomment this line and it will blow up
+    // This will cause an exception
     getFragmentManager().beginTransaction().replace(R.id.main_details, fragment).commit();
 ```    
     
