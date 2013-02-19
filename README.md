@@ -6,6 +6,7 @@ This project demonstrates how a call to getTransactionManager...commit() from an
 The question is, however, what is best practice for addressing this requirement?  It is possible to use 'commitAllowingStateLoss' _but_ I have not seen simple documentation covering the practical effects from that.  Alternatively, one might design out the fragment replacement by fetching the fragment (possibly from a member variable) and directly access the fragment methods (rather than using arguments).
  
 There are [examples][3] of workarounds using handlers within onLoadFinished but there is a question of whether that is simply hiding the issues?  Is that fundamentally the same as commitAllowingStateLoss?
+Dianne has also passed some [comments][4].
 
 The code of interest is as follows within ConstantsBrowser.  Replacing commit with commitAllowingStateLoss is the most simple fix.
 
@@ -53,3 +54,4 @@ The code of interest is as follows within ConstantsBrowser.  Replacing commit wi
 ```
 [2]: https://developer.android.com/reference/android/app/LoaderManager.LoaderCallbacks.html#onLoadFinished(android.content.Loader<D>,%20D)
 [3]: http://stackoverflow.com/questions/7746140/android-problems-using-fragmentactivity-loader-to-update-fragmentstatepagera
+[4]: https://groups.google.com/forum/?fromgroups=#!topic/android-developers/dXZZjhRjkMk
