@@ -1,7 +1,7 @@
 LoadersAndFragments
 ===================
 
-This project demonstrates how a call from onLoadFinished blows[1] up from an onLoadFinished callback.  This is correct behaviour as documented in the [API] [2].
+This project demonstrates how a call to getTransactionManager...commit() from an onLoadFinished callback blows[1] up with an IllegalStateException.  This is correct behaviour as documented in the [API] [2].
 
 The question is, however, what is best practice for addressing this requirement?  It is possible to use 'commitAllowingStateLoss' _but_ I have not seen simple documentation covering the practical effects from that.  Alternatively, one might design out the fragment replacement by fetching the fragment (possibly from a member variable) and directly access the fragment methods (rather than using arguments).
  
